@@ -60,8 +60,8 @@ const ResumeSection = () => {
               <div className="relative mb-8">
                 <div className="absolute -left-[29px] w-5 h-5 rounded-full bg-primary"></div>
                 <h5 className="text-lg font-medium">Bachelor of Technology in Information Technology</h5>
-                <p className="text-foreground/70">University Name</p>
-                <p className="text-sm text-foreground/50">2020 - Present</p>
+                <p className="text-foreground/70">RGPV</p>
+                <p className="text-sm text-foreground/50">2022 - Present</p>
               </div>
             </div>
           </motion.div>
@@ -77,13 +77,13 @@ const ResumeSection = () => {
               <div className="relative mb-8">
                 <div className="absolute -left-[29px] w-5 h-5 rounded-full bg-primary"></div>
                 <h5 className="text-lg font-medium">Frontend Developer Intern</h5>
-                <p className="text-foreground/70">Company Name</p>
+                {/* <p className="text-foreground/70">Company Name</p>
                 <p className="text-sm text-foreground/50">Jun 2023 - Aug 2023</p>
                 <ul className="list-disc list-inside mt-2 text-foreground/70">
                   <li>Developed responsive user interfaces using React.js</li>
                   <li>Collaborated with designers to implement pixel-perfect designs</li>
                   <li>Optimized website performance and improved loading times</li>
-                </ul>
+                </ul> */}
               </div>
               
               <div className="relative">
