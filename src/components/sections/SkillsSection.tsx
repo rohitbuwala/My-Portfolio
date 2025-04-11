@@ -34,7 +34,7 @@ const skills = [
   },
   {
     name: "GitHub",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    icon: "https://img.icons8.com/ios-filled/100/000000/github.png", // PNG, solid black
     category: "core",
   },
   {
