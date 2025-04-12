@@ -21,7 +21,7 @@ const projects = [
   },
   {
     title: "Weather Dashboard",
-    description: "A weather application showing current conditions and forecasts using a weather API with location detection.",
+    description: "A todos web that allows users to create, update, and delete tasks with a clean and modern interface.",
     image: "/todo.png",
     tags: ["React", "javascript", "TailWindCSS", ],
     github: "https://github.com/rohitbuwala/Todos",
