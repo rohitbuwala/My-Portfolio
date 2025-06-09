@@ -28,12 +28,12 @@ const projects = [
     live: "https://todos-rose-iota.vercel.app/",
   },
   {
-    title: "Portfolio Website",
-    description: "A personal portfolio website showcasing projects and skills with a modern design and animations.",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2Vic2l0ZXxlbnwwfHwwfHx8MA%3D%3D",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "E-commerce",
+    description: "A responsive e-commerce website built with React, showcasing product listings, cart functionality, and smooth UI – deployed on Netlify.",
+    image: "/e.png",
+    tags: [ "Tailwind CSS", "HTML", "javaScrit"],
+    github: "https://shiv-shop.netlify.app/",
+    live: "https://shiv-shop.netlify.app/",
   },
 ];
 
