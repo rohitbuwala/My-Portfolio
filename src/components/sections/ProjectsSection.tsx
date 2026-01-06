@@ -4,10 +4,26 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    title: "iBuiltThis – Share & Explore Projects",
+    description: "The platform helps new developers showcase their work, gain visibility, and learn from other creators.It has a clean UI, responsive design, and simple navigation for better user experience.",
+    image: "/iblt.png",
+    tags: ["Next.js", "React", "clerk", "NeonDB", "TypeScript", "TailwindCSS", "Zod"],
+    github: "",
+    live: "https://ibuiltthis-lab.vercel.app/",
+  },
+  {
+    title: "Streamfy – Chat & Video Calling App",
+    description: "Streamfy is a chat and video calling application for language learners.",
+    image: "/st.png",
+    tags: ["MongoDB", "Express.js", "React", "Node.js"],
+    github: "https://github.com/rohitbuwala/Streamify",
+    live: "https://streamify-2vyr.onrender.com/login",
+  },
+  {
     title: "Gaming - Web",
     description: "A fully responsive gaming website with product filtering, cart functionality, and checkout process.",
     image: "/gam.png",
-    tags: ["React", "Tailwind CSS", "Redux", "Gsap"],
+    tags: ["React", "Tailwind CSS", "Redux", "Gsap" ],
     github: "https://github.com/rohitbuwala/award-winning",
     live: "https://award-w.vercel.app/",
   },
@@ -15,25 +31,9 @@ const projects = [
     title: "Tranding Movies",
     description: "A movie discovery platform that allows users to explore trending movies, view details, and add them to a watchlist.",
     image: "/mov.png",
-    tags: ["React", "JavaScript", "Tailwind CSS",],
+    tags: ["React", "JavaScript", "Tailwind CSS"],
     github: "https://github.com/rohitbuwala/trend-movies",
     live: "https://trendmovies.vercel.app/",
-  },
-  {
-    title: "Weather Dashboard",
-    description: "A todos web that allows users to create, update, and delete tasks with a clean and modern interface.",
-    image: "/todo.png",
-    tags: ["React", "javascript", "TailWindCSS", ],
-    github: "https://github.com/rohitbuwala/Todos",
-    live: "https://todos-rose-iota.vercel.app/",
-  },
-  {
-    title: "E-commerce",
-    description: "A responsive e-commerce website built with React, showcasing product listings, cart functionality, and smooth UI – deployed on Netlify.",
-    image: "/e.png",
-    tags: [ "Tailwind CSS", "HTML", "javaScrit"],
-    github: "https://shiv-shop.netlify.app/",
-    live: "https://shiv-shop.netlify.app/",
   },
 ];
 

@@ -32,12 +32,12 @@ const AboutSection = () => {
             className="w-full md:w-2/5"
           >
             <div className="relative">
-              <div className="aspect-square rounded-xl overflow-hidden glass-card p-2">
+              <div className="aspect-square rounded-xl overflow-hidden glass-card p-1">
                 <div className="w-full h-full rounded-xl overflow-hidden bg-gradient-to-br from-neon-purple/50 to-neon-blue/50">
                   <img 
                     src="/rohit123.jpeg"
                     alt="Rohit Buwala"
-                    className="w-full h-full object-cover object-fit"
+                    className="w-full h-full object-cover object-[25%_center]"
                   />
                 </div>
               </div>
