@@ -38,7 +38,7 @@ const ResumeSection = () => {
             </p>
             
             <motion.a
-              href="/Rohit Resume.pdf"
+              href="/Rohit's_Resume_Fullstack.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -66,7 +66,7 @@ const ResumeSection = () => {
             </div>
           </motion.div>
 
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -98,7 +98,7 @@ const ResumeSection = () => {
                 </ul>
               </div>
             </div>
-          </motion.div> */}
+          </motion.div>
         </div>
       </div>
     </section>

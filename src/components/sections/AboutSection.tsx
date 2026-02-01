@@ -55,19 +55,13 @@ const AboutSection = () => {
           >
             <h3 className="text-2xl font-semibold mb-4">Hello there!</h3>
             <p className="text-foreground/80 mb-6 leading-relaxed">
-              I'm Rohit Buwala, an IT undergraduate with a passion for creating beautiful 
-              and functional web experiences. As a frontend developer, I enjoy turning complex 
-              problems into simple, intuitive designs.
+             I'm Rohit Buwala, an IT undergraduate with a strong passion for building modern, user-friendly, and high-performance web applications. I enjoy solving real-world problems by creating clean, simple, and effective digital solutions.
             </p>
             <p className="text-foreground/80 mb-6 leading-relaxed">
-              My journey in web development started with HTML, CSS, and JavaScript, 
-              and I've since expanded my toolkit to include modern frameworks like React.js. 
-              I'm currently exploring the backend world with Node.js, Express, and MongoDB to 
-              become a well-rounded full-stack developer.
+             My journey started with HTML, CSS, and JavaScript, and gradually expanded to frameworks like React.js. Over time, I developed a strong interest in backend development and now work with Node.js, Express, and MongoDB to build complete full-stack applications.
             </p>
             <p className="text-foreground/80 leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing to open-source 
-              projects, or learning something new to enhance my skills.
+             When I’m not coding, I like exploring new technologies, improving my development skills, and working on meaningful projects that help me grow as a professional developer.
             </p>
           </motion.div>
         </div>

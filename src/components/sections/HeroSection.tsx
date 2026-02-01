@@ -28,7 +28,7 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-2xl md:text-3xl text-foreground/80 mb-8">
-              Frontend Developer & IT Enthusiast
+             Full Stack Web Developer | Building Smart Solutions
             </h2>
           </motion.div>
 
@@ -39,8 +39,7 @@ const HeroSection = () => {
             className="mb-12"
           >
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Building beautiful web experiences with modern technologies.
-              Currently exploring the backend world.
+             Building powerful web applications with modern technologies. Exploring both frontend and backend.
             </p>
           </motion.div>
 
