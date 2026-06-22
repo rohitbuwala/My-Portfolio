@@ -3,11 +3,11 @@ import { skills, skillCategories } from "../../data/skills";
 import { useState, useCallback } from "react";
 
 const categorySpotlightColor: Record<string, string> = {
-  frontend: "rgba(155, 109, 255,",
-  backend: "rgba(255, 97, 216,",
-  database: "rgba(114, 242, 185,",
-  tools: "rgba(255, 209, 102,",
-  additional: "rgba(92, 225, 230,",
+  frontend: "rgba(6, 182, 212,",
+  backend: "rgba(20, 184, 166,",
+  database: "rgba(16, 185, 129,",
+  tools: "rgba(16, 185, 129,",
+  additional: "rgba(16, 185, 129,",
 };
 
 const SkillCard = ({
@@ -43,7 +43,7 @@ const SkillCard = ({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative overflow-hidden rounded-xl border border-white/5 bg-gradient-to-br from-secondary/30 to-secondary/10 backdrop-blur-xl p-4 sm:p-5 cursor-default transition-all duration-500 hover:border-white/15"
+      className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-md p-4 sm:p-5 cursor-default transition-all duration-500 hover:shadow-lg dark:border-white/5 dark:bg-card dark:shadow-sm dark:hover:shadow-md dark:hover:border-white/15"
     >
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-500"
@@ -64,7 +64,7 @@ const SkillCard = ({
 
       <div className="relative z-10 flex items-center gap-3 sm:gap-4">
         {skill.icon && (
-          <span className="text-lg sm:text-xl shrink-0 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl bg-secondary/60 font-bold border border-white/5 group-hover:border-white/10 group-hover:shadow-xl group-hover:shadow-primary/5 transition-all duration-300 group-hover:scale-110 group-hover:[text-shadow:0_0_20px_currentColor]">
+          <span className="text-lg sm:text-xl shrink-0 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl bg-secondary/60 font-bold border border-border/50 group-hover:border-primary/30 group-hover:shadow-xl group-hover:shadow-primary/5 transition-all duration-300 group-hover:scale-110 dark:border-white/5">
             {skill.icon}
           </span>
         )}
@@ -78,10 +78,10 @@ const SkillCard = ({
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 md:py-32 bg-secondary/30 relative">
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-40 right-20 w-72 h-72 bg-neon-purple/10 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-40 left-20 w-72 h-72 bg-neon-blue/10 rounded-full filter blur-3xl" />
+    <section id="skills" className="py-20 md:py-32 bg-slate-50 dark:bg-secondary/30 relative">
+      <div className="absolute inset-0 z-0 pointer-events-none hidden dark:block">
+        <div className="absolute top-40 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 left-20 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container-main relative z-10">

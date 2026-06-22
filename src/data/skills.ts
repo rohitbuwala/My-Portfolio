@@ -41,22 +41,22 @@ export const skillCategories: Record<
 > = {
   frontend: {
     label: "Frontend",
-    color: "from-neon-blue to-neon-purple",
+    color: "from-neon-cyan to-neon-teal",
   },
   backend: {
     label: "Backend",
-    color: "from-neon-purple to-neon-pink",
+    color: "from-neon-teal to-neon-emerald",
   },
   database: {
     label: "Database",
-    color: "from-neon-green to-neon-blue",
+    color: "from-neon-green to-neon-cyan",
   },
   tools: {
     label: "Tools",
-    color: "from-neon-yellow to-neon-pink",
+    color: "from-neon-yellow to-neon-emerald",
   },
   additional: {
     label: "Additional",
-    color: "from-neon-purple to-neon-blue",
+    color: "from-neon-teal to-neon-cyan",
   },
 };

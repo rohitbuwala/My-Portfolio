@@ -4,8 +4,8 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 md:py-32 relative">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-40 left-20 w-72 h-72 bg-neon-blue/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-40 right-20 w-72 h-72 bg-neon-pink/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-40 left-20 w-72 h-72 bg-accent/5 rounded-full blur-3xl hidden dark:block"></div>
+        <div className="absolute bottom-40 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl hidden dark:block"></div>
       </div>
 
       <div className="container-main relative z-10">
@@ -33,7 +33,7 @@ const AboutSection = () => {
           >
             <div className="relative">
               <div className="aspect-square rounded-xl overflow-hidden glass-card p-1">
-                <div className="w-full h-full rounded-xl overflow-hidden bg-gradient-to-br from-neon-purple/50 to-neon-blue/50">
+                <div className="w-full h-full rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
                   <img
                     src="/rohit123.jpeg"
                     alt="Rohit Buwala"
@@ -41,8 +41,8 @@ const AboutSection = () => {
                   />
                 </div>
               </div>
-              <div className="absolute -bottom-5 -right-5 w-24 h-24 bg-neon-blue rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-              <div className="absolute -top-5 -left-5 w-24 h-24 bg-neon-pink rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+              <div className="absolute -bottom-5 -right-5 w-24 h-24 bg-accent rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+              <div className="absolute -top-5 -left-5 w-24 h-24 bg-primary rounded-full blur-3xl opacity-30 pointer-events-none"></div>
             </div>
           </motion.div>
 

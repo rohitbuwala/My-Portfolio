@@ -109,8 +109,8 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20 md:py-32 relative">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-40 right-20 w-72 h-72 bg-neon-blue/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-40 left-20 w-72 h-72 bg-neon-green/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-40 right-20 w-72 h-72 bg-accent/5 rounded-full blur-3xl dark:block hidden"></div>
+        <div className="absolute bottom-40 left-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl dark:block hidden"></div>
       </div>
 
       <div className="container-main relative z-10">
@@ -213,7 +213,7 @@ const ContactSection = () => {
 
             <div className="glass-card rounded-xl p-6 bg-primary/5 border-primary/20">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm font-semibold text-foreground">
                   Available for Full-Time Opportunities
                 </span>
@@ -235,7 +235,7 @@ const ContactSection = () => {
             <div className="glass-card rounded-xl p-6 sm:p-8">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-10 text-center">
-                  <CheckCircle2 className="w-16 h-16 text-neon-green mb-4" />
+                  <CheckCircle2 className="w-16 h-16 text-primary mb-4" />
                   <h3 className="text-xl sm:text-2xl font-semibold mb-2">
                     Message Sent!
                   </h3>

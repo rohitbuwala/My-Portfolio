@@ -54,9 +54,9 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         neon: {
-          pink: "#FF61D8",
-          blue: "#5CE1E6",
-          purple: "#9B6DFF",
+          emerald: "#10b981",
+          teal: "#14b8a6",
+          cyan: "#06b6d4",
           green: "#72F2B9",
           yellow: "#FFD166",
         },

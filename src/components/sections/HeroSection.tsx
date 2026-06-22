@@ -5,9 +5,9 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center relative pt-20">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-40 right-20 w-96 h-96 bg-neon-purple/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-40 left-20 w-96 h-96 bg-neon-blue/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-pink/5 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-40 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl hidden dark:block"></div>
+        <div className="absolute bottom-40 left-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl hidden dark:block"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl hidden dark:block"></div>
       </div>
 
       <div className="container-main relative z-10">
@@ -18,7 +18,7 @@ const HeroSection = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium mb-8">
-              <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               Available for Full-Time Opportunities
             </div>
           </motion.div>
@@ -144,15 +144,15 @@ const HeroSection = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 max-w-3xl mx-auto"
           >
             <div className="glass-card rounded-xl p-3 sm:p-4 text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text mb-1">5+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1">5+</div>
               <div className="text-xs sm:text-sm text-foreground/60 font-medium">Full Stack Projects</div>
             </div>
             <div className="glass-card rounded-xl p-3 sm:p-4 text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text mb-1">2</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1">2</div>
               <div className="text-xs sm:text-sm text-foreground/60 font-medium">Production Deployments</div>
             </div>
             <div className="glass-card rounded-xl p-3 sm:p-4 text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text mb-1">15+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-1">15+</div>
               <div className="text-xs sm:text-sm text-foreground/60 font-medium">Technologies</div>
             </div>
             <div className="glass-card rounded-xl p-3 sm:p-4 text-center">

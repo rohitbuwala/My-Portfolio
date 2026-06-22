@@ -86,8 +86,8 @@ const ResumeSection = () => {
   return (
     <section id="resume" className="py-20 md:py-32 bg-secondary/30 relative">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-40 left-20 w-72 h-72 bg-neon-pink/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-40 right-20 w-72 h-72 bg-neon-purple/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-40 left-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl hidden dark:block"></div>
+        <div className="absolute bottom-40 right-20 w-72 h-72 bg-accent/5 rounded-full blur-3xl hidden dark:block"></div>
       </div>
 
       <div className="container-main relative z-10">

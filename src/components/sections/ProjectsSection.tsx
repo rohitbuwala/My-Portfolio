@@ -9,7 +9,7 @@ const FeaturedProjectCard = ({ project }: { project: typeof featuredProjects[0] 
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="glass-card-hover rounded-2xl overflow-hidden"
+      className="rounded-2xl overflow-hidden border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md dark:bg-card dark:border-white/5 dark:hover:border-white/15"
     >
       <div className="grid md:grid-cols-2 gap-0">
         <div className="relative overflow-hidden aspect-video md:aspect-auto md:h-full min-h-[200px] sm:min-h-[300px]">
@@ -18,7 +18,6 @@ const FeaturedProjectCard = ({ project }: { project: typeof featuredProjects[0] 
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent md:bg-gradient-to-r" />
         </div>
 
         <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
@@ -37,7 +36,7 @@ const FeaturedProjectCard = ({ project }: { project: typeof featuredProjects[0] 
           {project.problem && (
             <div className="mb-3">
               <div className="flex items-start gap-2">
-                <Lightbulb size={16} className="text-neon-yellow mt-0.5 shrink-0" />
+                <Lightbulb size={16} className="text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs font-semibold text-foreground/70 mb-0.5">Problem</p>
                   <p className="text-sm text-foreground/60 leading-relaxed">{project.problem}</p>
@@ -49,7 +48,7 @@ const FeaturedProjectCard = ({ project }: { project: typeof featuredProjects[0] 
           {project.solution && (
             <div className="mb-3">
               <div className="flex items-start gap-2">
-                <Target size={16} className="text-neon-blue mt-0.5 shrink-0" />
+                <Target size={16} className="text-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs font-semibold text-foreground/70 mb-0.5">Solution</p>
                   <p className="text-sm text-foreground/60 leading-relaxed">{project.solution}</p>
@@ -61,7 +60,7 @@ const FeaturedProjectCard = ({ project }: { project: typeof featuredProjects[0] 
           {project.impact && (
             <div className="mb-4">
               <div className="flex items-start gap-2">
-                <TrendingUp size={16} className="text-neon-green mt-0.5 shrink-0" />
+                <TrendingUp size={16} className="text-emerald-400 mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs font-semibold text-foreground/70 mb-0.5">Impact</p>
                   <p className="text-sm text-foreground/60 leading-relaxed">{project.impact}</p>
@@ -83,7 +82,7 @@ const FeaturedProjectCard = ({ project }: { project: typeof featuredProjects[0] 
                   >
                     <CheckCircle2
                       size={14}
-                      className="text-neon-green mt-0.5 shrink-0"
+                      className="text-primary mt-0.5 shrink-0"
                     />
                     <span>{feature}</span>
                   </div>
@@ -118,7 +117,7 @@ const FeaturedProjectCard = ({ project }: { project: typeof featuredProjects[0] 
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-border hover:border-primary/50 text-foreground/80 hover:text-primary px-4 sm:px-5 py-2.5 rounded-lg font-medium transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="inline-flex items-center gap-2 border border-border hover:border-primary/50 text-foreground/80 hover:text-primary px-4 sm:px-5 py-2.5 rounded-lg font-medium transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-white/10"
               >
                 <Github size={16} />
                 Source Code
@@ -139,7 +138,7 @@ const ProjectCard = ({ project, index }: { project: typeof otherProjects[0]; ind
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
       whileHover={{ y: -8 }}
-      className="group relative flex flex-col rounded-xl overflow-hidden border border-white/5 bg-gradient-to-br from-secondary/30 to-secondary/10 backdrop-blur-xl transition-all duration-500 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5"
+      className="group relative flex flex-col rounded-xl overflow-hidden border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md dark:bg-card dark:border-white/5 dark:hover:border-primary/20"
     >
       <div className="absolute top-3 left-3 z-20 text-xs font-mono font-bold text-foreground/20 group-hover:text-primary/60 transition-colors duration-300">
         {String(index + 1).padStart(2, "0")}
@@ -171,7 +170,7 @@ const ProjectCard = ({ project, index }: { project: typeof otherProjects[0]; ind
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-background/80 hover:bg-background text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg text-sm font-medium backdrop-blur-sm transition-all duration-300 border border-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="inline-flex items-center gap-2 bg-background/80 hover:bg-background text-foreground/80 hover:text-foreground px-4 py-2 rounded-lg text-sm font-medium backdrop-blur-sm transition-all duration-300 border border-border dark:border-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <Github size={14} />
               GitHub
@@ -210,9 +209,9 @@ const ProjectCard = ({ project, index }: { project: typeof otherProjects[0]; ind
 const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 md:py-32 relative">
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-40 right-20 w-72 h-72 bg-neon-green/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-40 left-20 w-72 h-72 bg-neon-yellow/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute inset-0 z-0 pointer-events-none hidden dark:block">
+        <div className="absolute top-40 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 left-20 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container-main relative z-10">
