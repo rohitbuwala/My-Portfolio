@@ -1,62 +1,98 @@
+import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
-import { Github, Instagram, Linkedin } from "lucide-react";
-import { motion } from "framer-motion";
+const quickLinks = [
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary py-10 text-foreground/80">
-      <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="mb-6 md:mb-0"
-          >
-            <p className="text-xl font-semibold gradient-text">
+    <footer className="border-t border-border py-12">
+      <div className="container-main">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <p className="text-xl font-bold gradient-text mb-2">
               Rohit<span className="text-primary">.dev</span>
             </p>
-            <p className="mt-2 text-sm">
-              © {new Date().getFullYear()} Rohit Buwala. All rights reserved.
+            <p className="text-sm text-foreground/50">
+              Full Stack Developer
             </p>
-          </motion.div>
+            <p className="mt-1 text-sm text-foreground/50">
+              Building production-grade web applications
+              with Next.js, React, TypeScript, and Node.js.
+            </p>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex space-x-6"
-          >
-            <a
-              href="https://github.com/rohitbuwala"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors duration-300"
-              aria-label="GitHub"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rohit-buwala/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors duration-300"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="https://www.instagram.com/inventive_story1/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors duration-300"
-              aria-label="Instagram"
-            >
-              <Instagram size={24} />
-            </a>
-          </motion.div>
+          <div>
+            <h4 className="text-sm font-semibold text-foreground/70 mb-3">
+              Quick Links
+            </h4>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-foreground/50 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-foreground/70 mb-3">
+              Connect
+            </h4>
+            <div className="flex items-center gap-3 mb-3">
+              <a
+                href="https://github.com/rohitbuwala"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+                aria-label="GitHub"
+              >
+                <Github size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rohit-buwala/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a
+                href="mailto:rohitbuwala821@gmail.com"
+                className="text-foreground/50 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+                aria-label="Email"
+              >
+                <Mail size={18} />
+              </a>
+              <a
+                href="https://github.com/rohitbuwala"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/50 hover:text-primary transition-colors text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+                aria-label="GitHub Profile"
+              >
+                <ExternalLink size={14} />
+              </a>
+            </div>
+            <p className="text-xs text-foreground/40">
+              Built with Next.js + TypeScript + Tailwind CSS
+            </p>
+          </div>
+        </div>
+
+        <div className="border-t border-border pt-6 text-center">
+          <p className="text-sm text-foreground/40">
+            &copy; {new Date().getFullYear()} Rohit Buwala. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

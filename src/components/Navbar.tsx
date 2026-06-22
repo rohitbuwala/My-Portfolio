@@ -1,13 +1,14 @@
-
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
+  { name: "What I Build", href: "#what-i-build" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
+  { name: "Achievements", href: "#achievements" },
   { name: "Resume", href: "#resume" },
   { name: "Contact", href: "#contact" },
 ];
@@ -22,8 +23,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -35,7 +35,7 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto flex items-center justify-between py-4">
+      <nav className="container-main flex items-center justify-between py-4">
         <motion.a
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,6 @@ const Navbar = () => {
           Rohit<span className="text-primary">.dev</span>
         </motion.a>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <ul className="flex space-x-6">
             {navLinks.map((link, index) => (
@@ -58,7 +57,7 @@ const Navbar = () => {
               >
                 <a
                   href={link.href}
-                  className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                  className="text-foreground/80 hover:text-primary transition-colors duration-300 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
                 >
                   {link.name}
                 </a>
@@ -68,20 +67,19 @@ const Navbar = () => {
           <ThemeToggle />
         </div>
 
-        {/* Mobile Navigation Toggle */}
         <div className="md:hidden flex items-center space-x-4">
           <ThemeToggle />
           <button
             onClick={toggleMenu}
-            className="text-foreground focus:outline-none"
+            className="text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -89,14 +87,14 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/95 backdrop-blur-lg"
+            className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
           >
             <ul className="flex flex-col space-y-4 p-6">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="block text-foreground/80 hover:text-primary transition-colors duration-300 py-2"
+                    className="block text-foreground/80 hover:text-primary transition-colors duration-300 py-2 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
                     onClick={toggleMenu}
                   >
                     {link.name}

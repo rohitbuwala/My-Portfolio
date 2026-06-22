@@ -1,16 +1,96 @@
-
 import { motion } from "framer-motion";
-import { FileDown } from "lucide-react";
+import { FileDown, Calendar, GraduationCap, Briefcase } from "lucide-react";
+import { experience, education } from "../../data/experience";
+
+const TimelineItem = ({
+  icon,
+  title,
+  subtitle,
+  period,
+  description,
+  index,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+  period: string;
+  description: string[];
+  index: number;
+}) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      viewport={{ once: true }}
+      className="relative pl-7 sm:pl-8 pb-8 last:pb-0"
+    >
+      <div className="absolute left-0 top-1 w-5 h-5 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
+        <div className="w-2 h-2 rounded-full bg-primary" />
+      </div>
+      {index < (description.length > 0 ? experience.length + education.length - 1 : 0) && (
+        <div className="absolute left-[9px] top-8 bottom-0 w-px bg-primary/20" />
+      )}
+      <div className="glass-card rounded-xl p-4 sm:p-5">
+        <div className="flex items-start gap-3 mb-3">
+          <div className="bg-primary/10 rounded-lg p-2 mt-0.5">
+            {icon}
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold">{title}</h4>
+            <p className="text-foreground/70 text-sm">{subtitle}</p>
+            <div className="flex items-center gap-1.5 text-xs text-foreground/40 mt-1">
+              <Calendar size={12} />
+              <span>{period}</span>
+            </div>
+          </div>
+        </div>
+        {description.length > 0 && (
+          <ul className="space-y-1.5 mt-2">
+            {description.map((item) => (
+              <li
+                key={item}
+                className="text-sm text-foreground/60 flex items-start gap-2"
+              >
+                <span className="text-primary mt-1 shrink-0">&#8226;</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </motion.div>
+  );
+};
 
 const ResumeSection = () => {
+  const allItems = [
+    ...experience.map((exp) => ({
+      type: "experience" as const,
+      icon: <Briefcase size={16} className="text-primary" />,
+      title: exp.title,
+      subtitle: exp.organization,
+      period: exp.period,
+      description: exp.description,
+    })),
+    ...education.map((edu) => ({
+      type: "education" as const,
+      icon: <GraduationCap size={16} className="text-primary" />,
+      title: edu.degree,
+      subtitle: edu.school,
+      period: edu.period,
+      description: [edu.status],
+    })),
+  ];
+
   return (
     <section id="resume" className="py-20 md:py-32 bg-secondary/30 relative">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-40 left-20 w-72 h-72 bg-neon-pink/10 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-40 right-20 w-72 h-72 bg-neon-purple/10 rounded-full filter blur-3xl"></div>
       </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+
+      <div className="container-main relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -18,87 +98,40 @@ const ResumeSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
-            My <span className="gradient-text">Resume</span>
+          <p className="section-subtitle">Resume</p>
+          <h2 className="section-title">
+            Experience & <span className="gradient-text">Education</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mt-4"></div>
+          <div className="section-divider" />
         </motion.div>
 
-        <div className="max-w-3xl mx-auto glass-card p-8 md:p-12 rounded-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <h3 className="text-2xl font-semibold mb-4">Want to know more about my experience?</h3>
-            <p className="text-foreground/70 mb-8">
-              Download my resume to learn more about my education, experience, and skills.
-            </p>
-            
+        <div className="max-w-3xl mx-auto">
+          <div className="mb-10 text-center">
             <motion.a
               href="/Rohit's_Resume_Fullstack.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-primary-foreground px-8 py-3 rounded-lg font-medium transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-primary-foreground px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base"
             >
-              <FileDown size={20} />
-              Download Resume
+              <FileDown size={18} />
+              Download Full Resume (PDF)
             </motion.a>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-xl font-semibold mb-4 gradient-text">Education</h4>
-            <div className="mb-8 border-l-2 border-primary/30 pl-6">
-              <div className="relative mb-8">
-                <div className="absolute -left-[29px] w-5 h-5 rounded-full bg-primary"></div>
-                <h5 className="text-lg font-medium">Bachelor of Technology in Information Technology</h5>
-                <p className="text-foreground/70">RGPV</p>
-                <p className="text-sm text-foreground/50">2022 - Present</p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-xl font-semibold mb-4 gradient-text">Experience</h4>
-            <div className="border-l-2 border-primary/30 pl-6">
-              <div className="relative mb-8">
-                <div className="absolute -left-[29px] w-5 h-5 rounded-full bg-primary"></div>
-                <h5 className="text-lg font-medium">Frontend Developer Intern</h5>
-                <p className="text-foreground/70">Company Name</p>
-                <p className="text-sm text-foreground/50">Jun 2023 - Aug 2023</p>
-                <ul className="list-disc list-inside mt-2 text-foreground/70">
-                  <li>Developed responsive user interfaces using React.js</li>
-                  <li>Collaborated with designers to implement pixel-perfect designs</li>
-                  <li>Optimized website performance and improved loading times</li>
-                </ul>
-              </div>
-              
-              <div className="relative">
-                <div className="absolute -left-[29px] w-5 h-5 rounded-full bg-primary"></div>
-                <h5 className="text-lg font-medium">Web Development Freelancer</h5>
-                <p className="text-foreground/70">Self-employed</p>
-                <p className="text-sm text-foreground/50">2022 - Present</p>
-                <ul className="list-disc list-inside mt-2 text-foreground/70">
-                  <li>Built custom websites for small businesses</li>
-                  <li>Implemented responsive designs and modern UI components</li>
-                  <li>Managed client relationships and project timelines</li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
+          <div className="space-y-0">
+            {allItems.map((item, index) => (
+              <TimelineItem
+                key={`${item.type}-${index}`}
+                icon={item.icon}
+                title={item.title}
+                subtitle={item.subtitle}
+                period={item.period}
+                description={item.description}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
